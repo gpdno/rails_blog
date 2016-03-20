@@ -1,5 +1,5 @@
 class Article <ActiveRecord::Base
-    validates :title, presences: true, length: {mininum: 5, maximum: 50}
-    validates :description, presences: true, lenght: {mininum: 20, maximum: 500}
+    validates :title, presence: true, length: { minimum: 5, maximum: 50 }
+    validates :description, presence: true, length: { minimum: 5, maximum: 500 }
     
 end
