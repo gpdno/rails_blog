@@ -8,7 +8,7 @@ class ArticlesController <ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      flash[:sucess] = "Blog post was sucessfull"
+      flash[:success] = "Blog post was sucessfull"
       redirect_to article_path(@article)
     else
       render 'new'
@@ -21,7 +21,7 @@ class ArticlesController <ApplicationController
   
   def update
     if @article.update(article_params)
-      flash[:sucess] = "Article was successfully updated"
+      flash[:success] = "Article was successfully updated"
       redirect_to article_path(@article)
     else
       render 'edit'
@@ -29,7 +29,7 @@ class ArticlesController <ApplicationController
   end
   
   def index
-    @articles = Article.all
+    @articles = Article.all.reverse
   end
   
   def show
@@ -38,7 +38,7 @@ class ArticlesController <ApplicationController
   
   def destroy
     @article.destroy
-    flash[:notice] = "Article was deleted"
+    flash[:danger] = "Article was deleted"
     redirect_to articles_path
   end
   

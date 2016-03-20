@@ -1,9 +1,9 @@
 html {
-    background-color: #e5dcbf;
+    background-color: #dacea4;
 }
 
 nav, .navbar, .navbar-default {
-    background-color: #e5dcbf;
+    background-color: #dacea4;
 }
 
 .row {
@@ -16,4 +16,9 @@ nav, .navbar, .navbar-default {
     padding-top: 5px;
     font-size: 75%;
     text-align: center;
+}
+
+.custom-form {
+    color: #000;
+    font-size: 70%;
 }
