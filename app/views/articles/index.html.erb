@@ -9,14 +9,14 @@
         <div class="col-sm-8 blog-main">
 
           <h2>Listing all articles</h2>
-          <p><%= link_to "New article", new_article_path, class: "btn btn-primary" %></p>
+          <%= link_to "New article", new_article_path, class: "btn btn-primary" %>
           <hr>
              
           <div class="blog-post">
             <% @articles.each do |article| %>
               <h3 class="blog-post-title"><%= link_to article.title, article_path(article) %></h3>
               <p class="blog-post-meta"><%= article.created_at %> by Greg</p>
-              <p><%= simple_format(article.description) %></p>
+              <p><%= truncate(simple_format(article.description), escape: false, length: 100) %></p>
               <p><%= link_to 'Edit', edit_article_path(article), class: "btn btn-info" %>&nbsp;
               &nbsp;
               <%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %></p>
