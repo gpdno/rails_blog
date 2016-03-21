@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get 'blog', to: 'pages#blog'
   get 'about', to: 'pages#about'
   
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
+  
   resources :articles
 
   # Example of regular route:
