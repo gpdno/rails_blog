@@ -10,8 +10,10 @@
         <div class="col-sm-8 blog-main">
 
           <h2>Listing all articles</h2>
-          <%= link_to "New article", new_article_path, class: "btn btn-primary" %>
-          <hr>
+          <% if logged_in? %>
+            <%= link_to "New article", new_article_path, class: "btn btn-primary" %>
+            <hr>
+          <% end %>
              
           <%= render 'articles', obj: @articles %>
 

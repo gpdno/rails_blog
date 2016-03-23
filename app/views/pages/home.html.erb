@@ -6,7 +6,9 @@
         <div class="text">
           <h1>Welcom to Greg's Alpha Blog!</h1>
           <p>This is based on a bootstrap template and the <a href = "http://www.udemy.com">Udemy</a> course <em>"The complete Ruby on Rails developers course"</em>.</p>
-          <p><%= link_to 'Sign up', signup_path, class: 'btn btn-primary btn-lg' %></p>
+          <% if !logged_in? %>
+            <p><%= link_to 'Sign up', signup_path, class: 'btn btn-primary btn-lg' %></p>
+          <% end %>
         </div>
         
         <div class="container">
