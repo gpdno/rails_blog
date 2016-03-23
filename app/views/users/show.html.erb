@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col col-sm-8">
-      <h2>Welcome to <%= @user.username %>'s Page</h2><hr>
-        
+      <h2>Welcome to <%= @user.username %>'s Page</h2>
+        <hr>
       <h4 align="center">
         <%= render 'articles/articles', obj: @user.articles %>
       </h4>

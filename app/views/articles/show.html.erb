@@ -1,3 +1,4 @@
+<% provide(:articles, "active") %>
 <div class="container custom-blog-container">
 
       <%= render 'shared/blog_header' %>
@@ -14,7 +15,7 @@
         </div>
       </div>
       
-    <% if logged_in? && current_user == @article.user %>  
+    <% if logged_in? && (current_user == @article.user || current_user.admin?) %>  
       <div class="row">
         <div class="col col-sm-8">
           <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-info" %>
