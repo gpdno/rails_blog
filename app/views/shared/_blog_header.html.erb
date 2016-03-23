@@ -1,0 +1,9 @@
+<div class="blog-header">
+  <h1 class="blog-title">The My Own Blog</h1>
+  <p class="lead blog-description">The official listings of the blog with a Bootstrap layout.</p>
+  
+  <ul class="nav nav-tabs">
+    <li role="presentation" class="<%= yield(:articles)%>"><%= link_to "Articles", articles_path %></li>
+    <li role="presentation" class="<%= yield(:users)%>"><%= link_to "Users", users_path %></li>
+  </ul>
+</div>
