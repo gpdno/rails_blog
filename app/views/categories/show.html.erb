@@ -1,5 +1,9 @@
 <div class="container">
-  <h2><%= @category.name %> category listings</h2><hr>
+  <h2><%= @category.name %> category listings</h2>
+    <% if logged_in? and current_user.admin? %>
+      <%= link_to "edit", edit_category_path(@category), class: "btn btn-warning" %>
+    <% end %>
+  <hr>
     <div class="row">
       <div class="col col-sm-8">
         <%= render 'articles/articles', obj: @category_articles %>
