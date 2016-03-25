@@ -11,6 +11,10 @@
               <p class="blog-post-meta"><small><%= @article.created_at.strftime("%a %b %d, %Y") %></small>
               by <%= @article.user.username if @article.user%></p>
               <p><%= simple_format(@article.description) %></p>
+              
+              <% if @article.categories.any? %>
+                <p> Categories: <%= render @article.categories %></p>
+              <% end %>
           </div><!-- /.blog-post -->
         </div>
       </div>

@@ -12,16 +12,16 @@ class CategoriesController <ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
-      flash[:success] = "Category added"
+      flash[:success] = "Category was created successfully"
       redirect_to categories_path
     else
       render 'new'
     end
-        
   end
   
   def show
-    
+    @category = Category.find(params[:id])
+    @category_articles = @category.articles
   end
   
   private
